@@ -1,9 +1,11 @@
 <?php
 
 // Game picks number from 1 to 100.
-$number = mt_rand(1,100);
+define('LOWEND', 1);
+define('HIEND', 100);
+$number = mt_rand(LOWEND, HIEND);
 // User is prompted to guess a number.
-fwrite(STDOUT, "Guess a number from 1 to 100! \n");
+fwrite(STDOUT, "Guess a number from " . LOWEND . " and " . HIEND . ".\n");
 $guess = (int) fgets(STDIN);
 $guesses = 1;
 
